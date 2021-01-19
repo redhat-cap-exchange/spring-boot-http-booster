@@ -1,9 +1,24 @@
 #!/bin/bash
-echo "Debug assembling"
+echo "Custom assembling"
 
-pwd
-ls -la /tmp/src
-sleep 20
+BUILD_DIR=/tmp/src
+
+# change to the src dir
+cd $BUILD_DIR
+
+# use the central nexus instance
+cp $BUILD_DIR/.m2/settings.xml /home/jboss/.m2/settings.xml
+
+# standard maven build
+MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTests clean install
+
+# move the build artifact to the default location 
+ls -la $BUILD_DIR/target
+
+env
+
+#Copying deployments from target to /deployments...
+#'/tmp/src/target/rest-http-2.3.2-1-SNAPSHOT.jar' -> '/deployments/rest-http-2.3.2-1-SNAPSHOT.jar'
 
 echo "done ..."
 #while [ 1 ]
