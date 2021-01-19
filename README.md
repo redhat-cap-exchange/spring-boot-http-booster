@@ -1,3 +1,10 @@
-[![CircleCI](https://circleci.com/gh/snowdrop/rest-http-example/tree/master.svg?style=shield)](https://circleci.com/gh/snowdrop/rest-http-example/tree/master)
+## Spring Boot Sample App
 
-https://appdev.openshift.io/docs/spring-boot-runtime.html#mission-http-api-spring-boot
+See https://appdev.openshift.io/docs/spring-boot-runtime.html#mission-http-api-spring-boot
+
+### Configure the workspace
+
+```shell
+cp /projects/spring-boot-http-booster/.m2/settings.xml /home/jboss/.m2/settings.xml
+```
+
