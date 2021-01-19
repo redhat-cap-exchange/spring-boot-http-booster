@@ -15,10 +15,12 @@ echo "Buid the artifact"
 MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTests clean install
 
 echo "Copying deployments from target to /deployments..."
+ls -la $PWD
+ls -la $PWD/target
 
 cp $PWD/target/*.jar /deployments
 
-ls -la /deployments
+#ls -la /deployments
 
 #env
 
