@@ -4,10 +4,10 @@ echo "Custom assembling"
 BUILD_DIR=/tmp/src
 
 # change to the src dir
-cd $PWD
+cd $BUILD_DIR
 
 # use the central nexus instance
-cp $PWD/.m2/settings.xml $HOME/.m2/settings.xml
+cp $BUILD_DIR/.m2/settings.xml $HOME/.m2/settings.xml
 
 echo "Buid the artifact"
 
@@ -15,10 +15,10 @@ echo "Buid the artifact"
 MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTests clean install
 
 echo "Copying deployments from target to /deployments..."
-ls -la $PWD
-ls -la $PWD/target
+ls -la $BUILD_DIR
+ls -la $BUILD_DIR/target
 
-cp $PWD/target/*.jar /deployments
+cp $BUILD_DIR/target/*.jar /deployments
 
 #ls -la /deployments
 
