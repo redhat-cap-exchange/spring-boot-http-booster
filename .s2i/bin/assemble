@@ -13,7 +13,7 @@ cp $BUILD_DIR/.m2/settings.xml $HOME/.m2/settings.xml
 echo "Buid the artifact"
 
 # standard maven build
-MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTests clean install
+MAVEN_OPTS="-Xmx200m ${EXTRA_MAVEN_OPTS}" && mvn -Duser.home=${HOME} -DskipTests clean install
 
 echo "Copying artifacts from target to /deployments..."
 
