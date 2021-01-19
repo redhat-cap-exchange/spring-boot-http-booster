@@ -1,8 +1,13 @@
 #!/bin/bash
-echo "Before assembling"
+echo "Debug assembling"
 
-while [ 1 ]
-do
-    echo "waiting ..."
-    sleep 2000
-done
+pwd
+ls -la /tmp/src
+sleep 20
+
+echo "done ..."
+#while [ 1 ]
+#do
+#    echo "waiting ..."
+#    sleep 2000
+#done
